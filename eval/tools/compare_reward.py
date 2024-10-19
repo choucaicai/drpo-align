@@ -18,9 +18,8 @@ import torch.nn.functional  as F
 from torch.nn.utils.rnn import pad_sequence
 import click
 from transformers import set_seed
-
+from api_client import rm_path
 # template
-rm_path = "/media/mil/LLMWeight/deberta-v3"
 
 def count_parameters(model):
     return sum(p.numel() for p in model.parameters() if p.requires_grad)

@@ -1,7 +1,0 @@
-- ++mode=vllm_sample
-- ++datasets=[hh_sample512]
-- ++n_samples=512
-- ++model.eval_batch_size=4
-- ++samples_dir=samples/qwen1.5-1.8-ada-ablation
-- ++exp_name=qwen1.5-1.8-hf-drpo-k2-btdpo-lr5e-7-ada
-- ++model.name_or_path=/media/mil/LLMfinetune/qwen1.5-1.8-hf-cache-diff-exp/qwen1.5-1.8-hf-drpo-k2-btdpo-lr5e-7-ada

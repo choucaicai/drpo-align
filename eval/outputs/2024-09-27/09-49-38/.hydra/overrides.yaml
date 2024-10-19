@@ -1,7 +1,0 @@
-- ++mode=vllm_sample
-- ++datasets=[hh_sample512]
-- ++n_samples=512
-- ++model.eval_batch_size=4
-- ++samples_dir=samples/base-sft
-- ++exp_name=qwen1.5-1.8-base-hh-sft
-- ++model.name_or_path= /media/mil/LLMfinetune/qwen1.5-1.8-base-hh-sft

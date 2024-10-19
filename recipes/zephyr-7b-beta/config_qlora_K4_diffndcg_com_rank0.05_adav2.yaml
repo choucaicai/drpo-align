@@ -1,0 +1,78 @@
+# Model arguments
+model_name_or_path: /media/mil/LLMWeight/mistral-7b-beta-sft
+torch_dtype: bfloat16
+use_flash_attention_2: true
+
+# LoRA arguments
+use_peft: true
+load_in_4bit: true
+lora_r: 128
+lora_alpha: 128
+lora_dropout: 0.05
+lora_target_modules:
+- q_proj
+- k_proj
+- v_proj
+- o_proj
+- gate_proj
+- up_proj
+- down_proj
+
+# Data training arguments
+dataset_mixer:
+  rankultrafeed: 1.0
+dataset_splits:
+- train
+- test
+preprocessing_num_workers: 4
+human_prefix: "<|user|>"
+human_suffix: ""
+assistant_prefix: "<|assistant|>"
+assistant_suffix: ""
+
+# DPOTrainer arguments
+run_name: zephyr_qlora_K4_diffndcg_com_rank0.05_adav2
+loss_type: diffndcg
+loss_config:
+  size : 4
+  steepness : 1
+  distribution : 'optimal'
+
+score_type:  com+adam
+score_config:
+  - score_name: prob+rank
+    score_config:
+      rank_coef: 0.05
+  - score_name: adam2
+    score_config:
+      ada_coef: 1
+      gamma: 0.9999
+      size: 4
+      tau: 0.05
+
+
+bf16: true
+do_eval: true
+evaluation_strategy: steps
+eval_steps: 500
+gradient_accumulation_steps: 16
+gradient_checkpointing: true
+gradient_checkpointing_kwargs:
+  use_reentrant: false
+# hub_model_id: zephyr-7b-drpo-qlora-own
+learning_rate: 1.0e-6
+log_level: info
+logging_steps: 10
+lr_scheduler_type: cosine
+max_length: 1024
+max_prompt_length: 512
+num_train_epochs: 1
+optim: rmsprop
+output_dir: /media/mil/LLMfinetune/zephyr-beta-hf-cache/zephyr_qlora_K4_diffndcg_com_rank0.05_adav2
+per_device_train_batch_size: 1
+per_device_eval_batch_size: 2
+save_strategy: "steps"
+save_steps: 500
+save_total_limit: 5
+seed: 42
+warmup_ratio: 0.1

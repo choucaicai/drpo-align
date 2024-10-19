@@ -45,9 +45,6 @@ from collections import defaultdict
 from datetime import datetime
 from transformers import AutoTokenizer
 import numpy as np
-# client = openai.OpenAI(
-#     api_key=os.environ.get("OPENAI_API_KEY"),
-# )
 from tools.api_client import client
 
 
@@ -63,10 +60,11 @@ parser.add_argument('--sleep_time', '-st', help="how long to sleep to prevent ra
 parser.add_argument('--max_comp', '-mc', help="maximum number of comparisons to make", type=int, default=None)
 parser.add_argument('--verbose', '-v', help="detailed outputs", type=bool, default=True)
 parser.add_argument('--results_file', '-r', help="JSONL file to append to", type=str, default='results.json')
-# parser.add_argument('--judge', '-j', help="version of GPT-4 used as judge", type=str, default='gpt-4-0613')
 parser.add_argument('--judge', '-j', help="version of GPT-4 used as judge", type=str, default='gpt-4-1106-preview')
+# parser.add_argument('--judge', '-j', help="version of GPT-4 used as judge", type=str, default='gpt-4-0613')
 # parser.add_argument('--judge', '-j', help="version of GPT-4 used as judge", type=str, default='gpt-4o')
 # parser.add_argument('--judge', '-j', help="version of GPT-4 used as judge", type=str, default='gpt-4o-2024-08-06')
+
 parser.add_argument('--n', '-n', help="number", type=str, default=1)
 
 
