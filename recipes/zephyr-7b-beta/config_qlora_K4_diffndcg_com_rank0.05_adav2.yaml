@@ -68,7 +68,7 @@ max_length: 1024
 max_prompt_length: 512
 num_train_epochs: 1
 optim: rmsprop
-output_dir: /media/mil/LLMfinetune/zephyr-beta-hf-cache/zephyr_qlora_K4_diffndcg_com_rank0.05_adav2
+output_dir: null
 per_device_train_batch_size: 1
 per_device_eval_batch_size: 2
 save_strategy: "steps"

@@ -55,7 +55,7 @@ max_length: 512
 max_prompt_length: 256
 num_train_epochs: 1
 optim: rmsprop
-output_dir:  /media/mil/LLMfinetune/qwen1.5-hf-cache-diffndcg-git/qwen1.5-1.8-hf-drpo-k8-simdiffndcg-com+adam-prob-rank0.1-lr5e-7_v2
+output_dir:  null
 per_device_train_batch_size: 1
 per_device_eval_batch_size: 2
 push_to_hub: False
