@@ -1,0 +1,68 @@
+# Model arguments
+model_name_or_path: /media/mil/LLMfinetune/qwen1.5-0.5-base-hh-sft
+torch_dtype: bfloat16
+use_flash_attention_2: true
+
+# LoRA arguments
+use_peft: true
+load_in_4bit: false
+lora_r: 128
+lora_alpha: 128
+lora_dropout: 0.05
+lora_target_modules:
+- q_proj
+- k_proj
+- v_proj
+- o_proj
+- gate_proj
+- up_proj
+- down_proj
+
+# Data training arguments
+dataset_mixer:
+  hhsuperrank: 1.0
+dataset_splits:
+- train
+- test
+preprocessing_num_workers: 4
+human_prefix: "Human:"
+human_suffix: ""
+assistant_prefix: "Assistant:"
+assistant_suffix: ""
+
+
+# DPOTrainer arguments
+run_name: qwen1.5-0.5-diffndcg-k8-qlora
+loss_type: diffndcg
+loss_config:
+  gamma : 0.9999
+  size : 8
+  steepness : 1
+  distribution : 'optimal'
+bf16: true
+beta: 0.01
+do_eval: true
+evaluation_strategy: steps
+eval_steps: 1000
+gradient_accumulation_steps: 2
+gradient_checkpointing: true
+gradient_checkpointing_kwargs:
+  use_reentrant: false
+# hub_model_id: zephyr-7b-dpo-qlora-own
+learning_rate: 5.0e-6
+log_level: info
+logging_steps: 10
+lr_scheduler_type: cosine
+max_length: 1024
+max_prompt_length: 512
+num_train_epochs: 1
+optim: adamw_torch
+output_dir: /media/mil/LLMfinetune/qwen1.5-0.5-hf-cache/qwen1.5-0.5-hf-drpo-k8-diffndcg-lora # It is handy to append `hub_model_revision` to keep track of your local experiments
+per_device_train_batch_size: 1
+per_device_eval_batch_size: 1
+# push_to_hub: true
+save_strategy: "steps"
+save_steps: 1000
+save_total_limit: 1
+seed: 42
+warmup_ratio: 0.05

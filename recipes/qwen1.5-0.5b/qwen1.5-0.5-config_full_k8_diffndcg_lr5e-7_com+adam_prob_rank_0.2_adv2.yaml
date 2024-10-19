@@ -1,0 +1,66 @@
+# Model arguments
+model_name_or_path: /media/mil/LLMfinetune/qwen1.5-0.5-base-hh-sft
+torch_dtype: bfloat16
+use_flash_attention_2: true
+
+# Data training arguments
+dataset_mixer:
+  hhsuperrank : 1.0
+dataset_splits:
+- train
+- test
+preprocessing_num_workers: 4
+human_prefix: "Human:"
+human_suffix: ""
+assistant_prefix: "Assistant:"
+assistant_suffix: ""
+
+# DPOTrainer arguments
+run_name: qwen1.5-0.5-hf-drpo-k8-simdiffndcg-com+adam-prob-rank0.2-lr5e-7-adv2-3
+
+mean_logps: true
+loss_type: simplediffndcg
+loss_config:
+  size : 8
+  steepness : 1
+  distribution : 'optimal'
+
+score_type:  com+adam
+score_config:
+  - score_name: prob+rank
+    score_config:
+      rank_coef: 0.2
+  - score_name: adam2
+    score_config:
+      ada_coef: 1
+      gamma: 0.9999
+      size: 8
+      tau: 0.2
+
+
+bf16: true
+do_eval: true
+evaluation_strategy: steps
+eval_steps: 500
+gradient_accumulation_steps: 1
+gradient_checkpointing: true
+gradient_checkpointing_kwargs:
+  use_reentrant: False
+
+learning_rate: 5.0e-7
+log_level: info
+logging_steps: 10
+lr_scheduler_type: cosine
+max_length: 512
+max_prompt_length: 256
+num_train_epochs: 1
+optim: rmsprop
+output_dir: /media/mil/LLMfinetune/qwen1.5-hf-cache-diffndcg-git/qwen1.5-0.5-hf-drpo-k8-simdiffndcg-com+adam-prob-rank0.2-lr5e-7-adv2-3
+per_device_train_batch_size: 2
+per_device_eval_batch_size: 2
+push_to_hub: False
+save_strategy: "steps"
+save_steps: 500
+save_total_limit: 1
+seed: 42
+warmup_ratio: 0.1

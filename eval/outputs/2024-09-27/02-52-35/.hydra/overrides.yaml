@@ -1,0 +1,7 @@
+- ++mode=vllm_sample
+- ++datasets=[hh_sample512]
+- ++n_samples=512
+- ++model.eval_batch_size=4
+- ++samples_dir=samples/method_comp_1.8
+- ++exp_name=qwen1.5-1.8-full-lambda-k8-beta0.1-lr5e-7-xx
+- ++model.name_or_path=/media/mil/LLMfinetune/qwen1.5-1.8b-cache/qwen1.5-1.8-full-lambda-k8-beta0.1-lr5e-7-xx

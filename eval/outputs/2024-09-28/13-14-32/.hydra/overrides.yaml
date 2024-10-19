@@ -1,0 +1,7 @@
+- ++mode=vllm_sample
+- ++datasets=[hh_sample512]
+- ++n_samples=512
+- ++model.eval_batch_size=4
+- ++samples_dir=samples/method_comp_0.5
+- ++exp_name=qwen1.5-0.5-hf-neuralsort-tau1.0-lr5e-7-ada-step
+- ++model.name_or_path=/media/mil/LLMfinetune/qwen1.5-0.5-hf-cache-diffndcg-ablation/step_models/qwen1.5-0.5-hf-neuralsort-tau1.0-lr5e-7-ada-step

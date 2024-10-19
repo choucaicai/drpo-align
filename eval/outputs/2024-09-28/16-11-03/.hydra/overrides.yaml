@@ -1,0 +1,7 @@
+- ++mode=vllm_sample
+- ++datasets=[hh_sample512]
+- ++n_samples=512
+- ++model.eval_batch_size=4
+- ++samples_dir=samples/method_comp_1.8-test
+- ++exp_name=qwen1.5-1.8-hf-drpo-k8-simdiffndcg-com+adam-prob-rank0.1-lr5e-7_v2
+- ++model.name_or_path=/media/mil/LLMfinetune/qwen1.5-1.8-hf-cache/qwen1.5-1.8-hf-drpo-k8-simdiffndcg-com+adam-prob-rank0.1-lr5e-7_v2
