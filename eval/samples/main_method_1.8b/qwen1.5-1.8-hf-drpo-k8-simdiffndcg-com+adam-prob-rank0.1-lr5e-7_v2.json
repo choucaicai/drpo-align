@@ -2,7 +2,7 @@
   "sampled_at": "2024-09-29 17:41:45.960404",
   "config": {
     "seed": 1,
-    "exp_name": "qwen1.5-1.8-hf-drpo-k8-simdiffndcg-com+adam-prob-rank0.1-lr5e-7_v2",
+    "exp_name": "",
     "datasets": [
       "hh_sample512"
     ],
@@ -20,7 +20,7 @@
     "frac_unique_desirable": 1.0,
     "frac_unique_undesirable": 1.0,
     "model": {
-      "name_or_path": "/media/mil/LLMfinetune/qwen1.5-1.8-hf-cache/qwen1.5-1.8-hf-drpo-k8-simdiffndcg-com+adam-prob-rank0.1-lr5e-7_v2",
+      "name_or_path": "",
       "policy_dtype": "bfloat16",
       "reference_dtype": "bfloat16",
       "max_length": 512,

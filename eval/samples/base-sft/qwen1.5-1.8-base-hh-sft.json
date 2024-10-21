@@ -20,7 +20,7 @@
     "frac_unique_desirable": 1.0,
     "frac_unique_undesirable": 1.0,
     "model": {
-      "name_or_path": "/media/mil/LLMfinetune/qwen1.5-1.8-base-hh-sft",
+      "name_or_path": "",
       "policy_dtype": "bfloat16",
       "reference_dtype": "bfloat16",
       "max_length": 512,

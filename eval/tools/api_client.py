@@ -1,18 +1,11 @@
-
-
 from openai import OpenAI
-
-
 import os
-from openai import OpenAI
-import openai
 import json
 
 # api key
 api_key=  "Your Openai Key"
 api_url=  ""
 rm_path = "/media/mil/LLMWeight/deberta-v3"
-
 
 client = OpenAI(
     api_key=api_key,
