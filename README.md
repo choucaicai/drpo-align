@@ -37,7 +37,7 @@ trained SFT model can be found in huggingface.
 - [Qwen1.5-0.5-HH-SFT](https://huggingface.co/kasoushu/qwen1.5-0.5-hh-sft)
 - [Qwen1.5-1.8-HH-SFT](https://huggingface.co/kasoushu/qwen1.5-1.8-hh-sft)
 - [Mistral-SFT-beta](https://huggingface.co/HuggingFaceH4/mistral-7b-sft-beta)
-- [constrcuted hh-rank-dataset](https://huggingface.co/datasets/kasoushu/hh-rank-dataset)
+- [HH-Rank-Dataset](https://huggingface.co/datasets/kasoushu/hh-rank-dataset)
 
 <!-- other trained model can be found as follows: -->
 
