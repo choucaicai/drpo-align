@@ -28,17 +28,22 @@ bitsandbytes                      0.41.0
 
 ### Training
 
-To train the model, run:
-```
-bash train.sh
-```
-
-trained SFT model can be found in huggingface.
+1. trained SFT model can be found in huggingface.
 - [Qwen1.5-0.5-HH-SFT](https://huggingface.co/kasoushu/qwen1.5-0.5-hh-sft)
 - [Qwen1.5-1.8-HH-SFT](https://huggingface.co/kasoushu/qwen1.5-1.8-hh-sft)
 - [Mistral-SFT-beta](https://huggingface.co/HuggingFaceH4/mistral-7b-sft-beta)
 - [HH-Rank-Dataset](https://huggingface.co/datasets/kasoushu/hh-rank-dataset)
 
+2. put download dataset in `data` folder, if your 放置在其他文件夹，则请修改 `src/load_data.py`中的
+```
+HH_RANK_BASE = "your path"
+```
+
+
+3. To train the model, run:
+```
+bash train.sh
+```
 <!-- other trained model can be found as follows: -->
 
 
