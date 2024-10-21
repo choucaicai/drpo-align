@@ -18,15 +18,13 @@ import logging
 import random
 import sys
 import os
-
-
 from datasets import Dataset
 sys.path.append('./')
 import torch
 import transformers
 from transformers import AutoModelForCausalLM, set_seed
 
-from src.alignment import (
+from src import (
     DataArguments,
     H4ArgumentParser,
     DRPOConfig,
@@ -39,10 +37,10 @@ from src.alignment import (
     get_tokenizer,
     is_adapter_model,
 )
-from src.alignment.load_data import get_datasets
-from src.alignment.configs import RankDataArguments
+from src.load_data import get_datasets
+from src.configs import RankDataArguments
 from peft import PeftConfig, PeftModel
-from src.alignment.trainer import DRPOTrainer
+from src.trainer import DRPOTrainer
 import wandb
 wandb.login(key="306a54d038566c203d15b36e64c7319482a65aa8")
 from  omegaconf import OmegaConf
