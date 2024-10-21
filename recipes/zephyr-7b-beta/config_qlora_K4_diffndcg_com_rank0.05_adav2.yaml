@@ -1,5 +1,5 @@
 # Model arguments
-model_name_or_path: /media/mil/LLMWeight/mistral-7b-beta-sft
+model_name_or_path: your_path
 torch_dtype: bfloat16
 use_flash_attention_2: true
 
@@ -31,7 +31,7 @@ assistant_prefix: "<|assistant|>"
 assistant_suffix: ""
 
 # DPOTrainer arguments
-run_name: zephyr_qlora_K4_diffndcg_com_rank0.05_adav2
+run_name: zephyr_qlora_K4_diffndcg_adav2
 loss_type: diffndcg
 loss_config:
   size : 4

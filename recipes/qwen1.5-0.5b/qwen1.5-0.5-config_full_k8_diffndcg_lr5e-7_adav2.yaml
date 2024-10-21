@@ -1,5 +1,5 @@
 # Model arguments
-model_name_or_path: /media/mil/LLMfinetune/qwen1.5-0.5-base-hh-sft
+model_name_or_path: yourpath
 torch_dtype: bfloat16
 use_flash_attention_2: true
 
@@ -16,7 +16,7 @@ assistant_prefix: "Assistant:"
 assistant_suffix: ""
 
 # DPOTrainer arguments
-run_name: qwen1.5-0.5-hf-drpo-k8-diffndcg-com+adam-prob-rank0.2-lr5e-7-adv2-3
+run_name: qwen1.5-0.5-hf-drpo-k8-adv2
 
 use_ref: false
 mean_logps: true
@@ -55,7 +55,7 @@ max_length: 512
 max_prompt_length: 256
 num_train_epochs: 1
 optim: rmsprop
-output_dir: /media/mil/LLM-reproduce/qwen1.5-0.5-hf-drpo-k8-diffndcg-com+adam-prob-rank0.2-lr5e-7-adv2-3
+output_dir: null
 per_device_train_batch_size: 2
 per_device_eval_batch_size: 2
 push_to_hub: False

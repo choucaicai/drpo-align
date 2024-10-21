@@ -1,5 +1,5 @@
 # Model arguments
-model_name_or_path: /media/mil/LLMfinetune/qwen1.5-1.8-base-hh-sft
+model_name_or_path: your_path
 torch_dtype: bfloat16
 use_flash_attention_2: true
 
@@ -16,7 +16,7 @@ assistant_prefix: "Assistant:"
 assistant_suffix: ""
 
 # DPOTrainer arguments
-run_name: qwen1.5-1.8-hf-drpo-k8-simdiffndcg-com+adam-prob-rank0.1-lr5e-7_v2
+run_name: qwen1.5-1.8-hf-drpo-k8-adav2
 
 mean_logps: true
 loss_type: simplediffndcg
@@ -46,7 +46,6 @@ gradient_checkpointing: true
 gradient_checkpointing_kwargs:
   use_reentrant: False
 
-# hub_model_id: zephyr-7b-dpo-full
 learning_rate: 5.0e-7
 log_level: info
 logging_steps: 10
