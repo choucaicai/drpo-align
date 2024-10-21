@@ -50,6 +50,7 @@ bash train.sh
 ### Reward Model Evaluation
 
 1. To evaluate a trained model, the first step is to generate sample responses.
+- `cd eval`
 
 - Using hf sample
 ```
