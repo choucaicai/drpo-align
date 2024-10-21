@@ -148,7 +148,7 @@ def get_hhrank(split: str, human_prefix: str, human_suffix: str, assistant_prefi
             # data = data[:eval_examples]
         data = data[:256]
     # return data
-    return Dataset.from_list(data[:256])
+    return Dataset.from_list(data[:])
 
 
 def get_hhsuperrank(split: str, human_prefix: str, human_suffix: str, assistant_prefix: str, assistant_suffix: str) -> Dataset:
