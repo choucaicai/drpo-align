@@ -34,7 +34,7 @@ bitsandbytes                      0.41.0
 - [Mistral-SFT-beta](https://huggingface.co/HuggingFaceH4/mistral-7b-sft-beta)
 - [HH-Rank-Dataset](https://huggingface.co/datasets/kasoushu/hh-rank-dataset)
 
-2. put download dataset in `data` folder, if your 放置在其他文件夹，则请修改 `src/load_data.py`中的
+2. Place the downloaded dataset in the `data` folder for default configuration. If you opt to store the dataset in a different directory, you'll need to modify the corresponding path in `src/load_data.py`, such as:
 ```
 HH_RANK_BASE = "your path"
 ```
