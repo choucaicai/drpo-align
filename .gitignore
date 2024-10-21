@@ -163,4 +163,3 @@ cython_debug/
 data/
 wandb/
 neuralsort
-src/

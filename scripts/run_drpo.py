@@ -24,12 +24,7 @@ import torch
 import transformers
 from transformers import AutoModelForCausalLM, set_seed
 
-from src import (
-    DataArguments,
-    H4ArgumentParser,
-    DRPOConfig,
-    ModelArguments,
-    apply_chat_template,
+from src.model_utils import (
     get_checkpoint,
     get_kbit_device_map,
     get_peft_config,
@@ -37,6 +32,8 @@ from src import (
     get_tokenizer,
     is_adapter_model,
 )
+from src.configs import DataArguments, DPOConfig,DRPOConfig, H4ArgumentParser, ModelArguments, SFTConfig
+
 from src.load_data import get_datasets
 from src.configs import RankDataArguments
 from peft import PeftConfig, PeftModel

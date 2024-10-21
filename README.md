@@ -28,7 +28,7 @@ bitsandbytes                      0.41.0
 
 ### Training
 
-1. trained SFT model can be found in huggingface.
+1. Trained SFT model can be found in huggingface.
 - [Qwen1.5-0.5-HH-SFT](https://huggingface.co/kasoushu/qwen1.5-0.5-hh-sft)
 - [Qwen1.5-1.8-HH-SFT](https://huggingface.co/kasoushu/qwen1.5-1.8-hh-sft)
 - [Mistral-SFT-beta](https://huggingface.co/HuggingFaceH4/mistral-7b-sft-beta)
@@ -51,7 +51,7 @@ bash train.sh
 
 1. To evaluate a trained model, the first step is to generate sample responses.
 
-- using hf sample
+- Using hf sample
 ```
     accelerate launch --main_process_port 29500 eval.py \
         --config-path="eval/eval_configs/hf_config" \
@@ -64,7 +64,7 @@ bash train.sh
         ++model.name_or_path=model_path_name
 ```
 
-- using vllm sample
+- Using vllm sample
 ```
     python eval.py \
         --config-path="eval_configs/vllm_config_t1.0" \
@@ -79,7 +79,7 @@ bash train.sh
 
 2. Calculate the win rate using the Reward model
 
-- download [reward model](https://huggingface.co/OpenAssistant/reward-model-deberta-v3-large-v2) from huggingface
+- Download [reward model](https://huggingface.co/OpenAssistant/reward-model-deberta-v3-large-v2) from huggingface
 
 - Execute the command `python tools/compare_reward.py --samples_file "$file" --output_path "$output_result"` to compare sample responses with chosen responses.
 
@@ -88,7 +88,7 @@ bash train.sh
 
 ### GPT Evaluation
 
-1. modify eval/tools/api_client.py
+1. Modify eval/tools/api_client.py
 ```
 api_key=  "Your Openai Key"
 api_url=  "base url"
