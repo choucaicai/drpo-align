@@ -1,9 +1,4 @@
 
-# Optimizing Preference Alignment with Differentiable NDCG Ranking
-
-This repository contains the implementation of the paper "Optimizing Preference Alignment with Differentiable NDCG Ranking".
-
-Full code will be available soon. We are currently in the process of organizing and refining all the code. Some portions of the code have already been uploaded.
 
 
 ## Overview
